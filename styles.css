@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    background-image:url(img/bg.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+header .logo{
+    color: #fff;
+    text-decoration:none;
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+}
+
+header ul li a:hover,
+header ul li a.active
+{
+    background-color: #fff;
+    color: #1A0066;
+}
+
+section#hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section#hero img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section#hero img#moon{
+    mix-blend-mode: screen;
+}
+section#hero img#stars{
+    mix-blend-mode: screen;
+}
+
+#title{
+    position: absolute;
+    color: #fff;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 3em;
+    z-index: 9;
+}
+
+#hero a{
+    text-decoration: none;
+    padding: 8px 24px;
+    background-color: #fff;
+    color: #1A0066;
+    font-size: 1.4em;
+    transform: translateY(100px);
+    z-index: 10000;
+}
+
+#hero a:hover{
+    background-image: linear-gradient(45deg, #44C6E7, #5773ff);
+    color:#fff;
+    cursor: pointer;
+}
+
+#elverso::before{
+    background-image: linear-gradient(90deg, #110223, #11022300);
+    height: 100px;
+    margin-top: -50px;
+}
+#elverso{
+    position: relative;
+    background-color: #110223;
+    padding: 100px;   
+}
+
+#elverso h2{
+    color: #fff;
+    font-size: 4em;
+    letter-spacing: 2px;
+}
+
+#elverso p{
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+#astronauta{
+    background-color: #110223;
+}
+
+#astronauta h2{
+    color: #fff;
+}
+
+.astronauta{
+    animation: movimiento 3s linear infinite;
+}
+
+#behind{
+    animation: movimiento_2 4s linear infinite;
+}
+
+
+
+@keyframes movimiento_2{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(25px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes movimiento{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
