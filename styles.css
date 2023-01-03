@@ -146,15 +146,11 @@ section#hero img#starsmobile{
     cursor: pointer;
 }
 
-#elverso::before{
-    background-image: linear-gradient(90deg, #110223, #11022300);
-    height: 100px;
-    margin-top: -50px;
-}
+
 #elverso{
     position: relative;
     background-color: #110223;
-    padding: 100px;   
+    padding: 2rem;   
 }
 
 #elverso h2{
