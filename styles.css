@@ -8,12 +8,37 @@
     scroll-behavior: smooth;
 }
 
+:root{
+    --text-s:.8rem;
+    --text:1rem;
+    --text-m:1.2rem;
+    --text-l:1.5rem;
+    --text-xl:2.5rem;
+}
+
+.text-s{
+    font-size: .8rem;
+}
+.text{
+    font-size: 1rem;
+}
+.text-m{
+    font-size: 1.2rem;
+}
+.text-l{
+    font-size: 1.5rem;
+}
+.text-xl{
+    font-size: 2.5rem;
+}
+
 body{
     min-height: 100vh;
     background-image:url(img/bg.png);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    font-size: 16px;
 }
 
 header{
@@ -81,18 +106,26 @@ section#hero img{
     object-fit: cover;
 }
 
-section#hero img#moon{
+section#hero img#moon,
+section#hero img#moonmobile{
     mix-blend-mode: screen;
 }
-section#hero img#stars{
+section#hero img#stars,
+section#hero img#starsmobile{
     mix-blend-mode: screen;
+    opacity: .8;
+}
+#starsmobile{
+    z-index: -10;
+    display: none;
+    
 }
 
 #title{
     position: absolute;
     color: #fff;
-    white-space: nowrap;
     text-align: center;
+    font-weight: 700;
     font-size: 3em;
     z-index: 9;
 }
@@ -104,7 +137,7 @@ section#hero img#stars{
     color: #1A0066;
     font-size: 1.4em;
     transform: translateY(100px);
-    z-index: 10000;
+    z-index: 999;
 }
 
 #hero a:hover{
@@ -137,10 +170,12 @@ section#hero img#stars{
 
 #astronauta{
     background-color: #110223;
+    height: 100vh;
 }
 
 #astronauta h2{
     color: #fff;
+    margin-top: 2rem;
 }
 
 .astronauta{
@@ -151,7 +186,18 @@ section#hero img#stars{
     animation: movimiento_2 4s linear infinite;
 }
 
+#behindmobile{
+    animation: movimiento_2 4s linear infinite;
+}
 
+/*backgrounds hero*/
+#starsmobile, #moonmobile, #behindmobile, #frontmobile {
+    display: none !important;
+}
+
+.salto-mobile{
+    display: none;
+}
 
 @keyframes movimiento_2{
     0%{
@@ -174,4 +220,135 @@ section#hero img#stars{
     100%{
         transform: translateY(0);
     }
+}
+
+
+@media (max-width: 450px) {
+
+    #starsmobile, #moonmobile, #behindmobile, #frontmobile{
+        display: block !important;;
+    }
+
+    #stars, #moon, #behind, #front{
+        display: none !important;;
+    }
+
+    #title{
+        font-size: 2.5rem;
+        margin-top: -3rem;
+    }
+    #elverso{
+        padding:2rem;
+    }
+    #elverso h2{
+        font-size: 2.5rem;
+    }
+    #elverso img{
+        width: 300px;
+    }
+    header{
+        width: 100vw;
+        padding: 2rem;
+    }
+    .bajada{
+        font-size: var(--text);
+    }
+    .salto-mobile{
+        display: block;
+    }
+    #btn-hero{
+        margin-top: 3rem;
+    }
+
+}
+
+/* ESTILOS NAV MOBILE*/
+
+.menu{
+    display: none;
+}
+
+.header-nav a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+}
+.header-nav a:hover{
+    color: #fff;
+    background-image: linear-gradient(45deg, #44C6E7, #5773ff);
+}
+
+.header-nav .overlay{
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    background-image: url(img/bg-mobile.png);
+    overflow: hidden;
+    transition: all 0.3s ease 0s;
+    z-index: 100000;
+}
+
+.header-nav .overlay .overlay-content{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-nav .overlay a{
+    padding: 15px;
+    font-size: 2em;
+    display: block;
+    transition: all 0.3s ease 0s;
+    font-weight: 600;
+    color: #f1f1f1;
+	text-align: center;
+}
+
+.header-nav .overlay a:hover, 
+.header-nav .overlay a:focus{
+    color: #000;
+}
+
+.header-nav .overlay .close{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 3em;
+}
+
+
+
+
+
+@media screen and (max-width: 900px) {
+
+    .header-nav .navbar{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .btnt-skvio{
+        display: none;
+    }
+    .header-nav .logomobile{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .body{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    
+
 }
