@@ -259,6 +259,9 @@ section#hero img#starsmobile{
     #btn-hero{
         margin-top: 3rem;
     }
+    section#hero img#behindmobile{
+        top: -7rem;
+    }
 
 }
 
