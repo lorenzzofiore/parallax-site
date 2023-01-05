@@ -159,6 +159,10 @@ section#hero img#starsmobile{
     letter-spacing: 2px;
 }
 
+#elverso img{
+    overflow: hidden;
+}
+
 #elverso p{
     color: #fff;
     letter-spacing: 2px;
